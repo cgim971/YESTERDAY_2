@@ -247,7 +247,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1182550310
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -343,10 +343,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b852ae51adc52d46bf2e79b41ae4dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigid: {fileID: 0}
-  _speed: 0
-  _isTarget: 0
+  _rigid: {fileID: 1182550309}
+  _speed: 3
   _target: {fileID: 0}
+  _velocity: {x: 0, y: 0, z: 0}
+  _radius: 3
 --- !u!1 &1481036079
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +361,7 @@ GameObject:
   - component: {fileID: 1481036081}
   - component: {fileID: 1481036080}
   - component: {fileID: 1481036084}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +402,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1481036082
 SpriteRenderer:
   m_ObjectHideFlags: 0
