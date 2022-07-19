@@ -9,28 +9,62 @@ public class WeaponUse : MonoBehaviour
     [SerializeField] GunData _gunData;
 
 
+    public GameObject bullet;
+    public Transform shotPos;
 
-    private void UseWeapon()
+    private void Start()
     {
-        EquipmentWeaponType equipmentWeaponType = SaveManager.instance.PLAYERDATA.EQUIPMENTWEAPONTYPE;
-        switch (equipmentWeaponType)
+
+    }
+
+    private IEnumerator UseWeapon()
+    {
+        while (true)
         {
-            case EquipmentWeaponType.NONE:
-                SaveManager.instance.PLAYERDATA.EQUIPMENTWEAPONTYPE = EquipmentWeaponType.FIST;
-                UseWeapon();
-                return;
-            case EquipmentWeaponType.FIST:
-                UseFist();
-                break;
-            case EquipmentWeaponType.GUN:
-                UseGun();
-                break;
+
+            //yield return WaitUntil();
+
+
+
         }
     }
-    private void UseFist()
-    {
-        if (_fistData == null) return;
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0)) TestGun();
+    }
+
+    void TestGun()
+    {
+        GameObject newBullet = Instantiate(bullet, null);
+        newBullet.transform.position = shotPos.position;
+        newBullet.transform.rotation = transform.rotation;
+    }
+
+
+    //private void UseWeapon()
+    //{
+    //    EquipmentWeaponType equipmentWeaponType = SaveManager.instance.PLAYERDATA.EQUIPMENTWEAPONTYPE;
+    //    switch (equipmentWeaponType)
+    //    {
+    //        case EquipmentWeaponType.NONE:
+    //            SaveManager.instance.PLAYERDATA.EQUIPMENTWEAPONTYPE = EquipmentWeaponType.FIST;
+    //            UseWeapon();
+    //            return;
+    //        case EquipmentWeaponType.FIST:
+    //            StartCoroutine(UseFist());
+    //            break;
+    //        case EquipmentWeaponType.GUN:
+    //            UseGun();
+    //            break;
+    //    }
+    //}
+
+    private IEnumerator UseFist()
+    {
+        if (_fistData == null) yield break;
+
+        // 주먹 애니메이션
 
     }
     private void SelectGun(GunData gunData)

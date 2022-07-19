@@ -8,4 +8,5 @@ public class WeaponInfo
     [SerializeField] private string _weaponName;
     [SerializeField] private float _damage;
 
+    [SerializeField] private bool _isGet;
 }
