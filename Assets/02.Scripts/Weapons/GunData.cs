@@ -11,6 +11,8 @@ public class GunData : ScriptableObject
     public GunBullet _gunBullet;
     public List<GunType> _gunType;
     public int _gunTypeIndex;
+
+    public float _bulletSpeed;
 }
 
 public enum GunBullet

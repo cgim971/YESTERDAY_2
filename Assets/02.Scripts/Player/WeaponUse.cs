@@ -39,6 +39,7 @@ public class WeaponUse : MonoBehaviour
         GameObject newBullet = Instantiate(bullet, null);
         newBullet.transform.position = shotPos.position;
         newBullet.transform.rotation = transform.rotation;
+        newBullet.GetComponent<BulletMovement>().SPEED = _gunData._bulletSpeed;
     }
 
 
