@@ -15,6 +15,9 @@ MonoBehaviour:
   _weaponInfo:
     _weaponName: Glock
     _damage: 15
+    _isGet: 0
   _bulletMaxCount: 19
   _gunBullet: 3
   _gunType: 0100000002000000
+  _gunTypeIndex: 0
+  _bulletSpeed: 7
