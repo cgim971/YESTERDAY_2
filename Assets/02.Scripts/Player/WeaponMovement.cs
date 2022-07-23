@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WeaponMovement : MonoBehaviour
 {
+
+
     private void FixedUpdate()
     {
         Vector2 origin = transform.parent.position;
@@ -17,6 +19,10 @@ public class WeaponMovement : MonoBehaviour
             transform.localScale = new Vector3(1, -1, 1);
         }
 
+
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
+
+
+
 }
