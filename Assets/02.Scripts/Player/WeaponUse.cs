@@ -12,22 +12,6 @@ public class WeaponUse : MonoBehaviour
     public GameObject bullet;
     public Transform shotPos;
 
-    private void Start()
-    {
-
-    }
-
-    private IEnumerator UseWeapon()
-    {
-        while (true)
-        {
-
-            //yield return WaitUntil();
-
-
-
-        }
-    }
 
     private void Update()
     {
@@ -41,43 +25,4 @@ public class WeaponUse : MonoBehaviour
         newBullet.transform.rotation = transform.rotation;
         newBullet.GetComponent<BulletMovement>().SPEED = _gunData._bulletSpeed;
     }
-
-
-    //private void UseWeapon()
-    //{
-    //    EquipmentWeaponType equipmentWeaponType = SaveManager.instance.PLAYERDATA.EQUIPMENTWEAPONTYPE;
-    //    switch (equipmentWeaponType)
-    //    {
-    //        case EquipmentWeaponType.NONE:
-    //            SaveManager.instance.PLAYERDATA.EQUIPMENTWEAPONTYPE = EquipmentWeaponType.FIST;
-    //            UseWeapon();
-    //            return;
-    //        case EquipmentWeaponType.FIST:
-    //            StartCoroutine(UseFist());
-    //            break;
-    //        case EquipmentWeaponType.GUN:
-    //            UseGun();
-    //            break;
-    //    }
-    //}
-
-    private IEnumerator UseFist()
-    {
-        if (_fistData == null) yield break;
-
-        // 주먹 애니메이션
-
-    }
-    private void SelectGun(GunData gunData)
-    {
-        _gunData = gunData;
-    }
-
-    private void UseGun()
-    {
-        if (_gunData == null) return;
-
-
-    }
-
 }

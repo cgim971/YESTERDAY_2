@@ -49,8 +49,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void ChangeAnimation()
     {
-        if (Input.GetButton("Horizontal"))
-            _spriteRenderer.flipX = _amount.x == 0 ? _spriteRenderer.flipX : _amount.x > 0;
+        Vector2 playerPos = transform.position;
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        _spriteRenderer.flipX = playerPos.x == mousePos.x ? _spriteRenderer.flipX : mousePos.x > playerPos.x;
 
         if (_amount.x == 0 && _amount.y == 0)
             _animator.SetBool("isRun", false);
